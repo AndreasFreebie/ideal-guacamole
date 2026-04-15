@@ -1,63 +1,44 @@
 # Copilot Workspace Instructions
 
-## Development Checklist
+## Mandatory Development Checklist
 
-Before making or committing changes, verify:
+- [ ] Run linting or analyzer checks
+- [ ] `dotnet build SocOps/SocOps.csproj`
+- [ ] `dotnet test` when tests exist
 
-- [ ] `dotnet build SocOps/SocOps.csproj` passes with no errors
-- [ ] `dotnet run --project SocOps/SocOps.csproj` starts the dev server
-- [ ] Code follows C# naming and style conventions
-- [ ] No unused variables or imports remain
+## Project Summary
 
-## Project Overview
+**Soc Ops** is a Blazor WebAssembly Social Bingo workshop app on .NET 10.
 
-**Soc Ops** is a Blazor WebAssembly app for Social Bingo built on .NET 10. The app is a workshop lab that teaches frontend and agent-driven development with GitHub Copilot.
+## Structure
 
-## Architecture
+- `SocOps/Components` — reusable Blazor UI components
+- `SocOps/Services` — game state and logic
+- `SocOps/Models` — domain models
+- `SocOps/Data` — question data
+- `SocOps/Pages/Home.razor` — entry page
+- `SocOps/wwwroot/css/app.css` — utility-first styles
 
-```
-SocOps/
-├── Components/     # Reusable Blazor UI components
-│   ├── BingoBoard.razor
-│   ├── BingoSquare.razor
-│   ├── BingoModal.razor
-│   ├── GameScreen.razor
-│   └── StartScreen.razor
-├── Data/           # Static question data
-│   └── Questions.cs
-├── Models/         # Domain models and game state
-├── Pages/          # Routable pages
-│   └── Home.razor
-├── Services/       # Game logic and state management
-│   ├── BingoGameService.cs
-│   └── BingoLogicService.cs
-└── wwwroot/        # Static assets and CSS
-    └── css/app.css
-```
-
-## Key Commands
+## Quick Commands
 
 ```bash
 cd SocOps
 dotnet run
 # or from repo root:
-# dotnet run --project SocOps/SocOps.csproj
+dotnet run --project SocOps/SocOps.csproj
 
 dotnet build SocOps/SocOps.csproj
 ```
 
-> Note: This workspace does not currently include a test project, so `dotnet test` is not available by default.
+## Notes
 
-## Styling Notes
+- Styling uses custom utility classes in `SocOps/wwwroot/css/app.css`
+- Keep component styling simple and consistent with existing layout
 
-- Uses custom utility classes defined in `SocOps/wwwroot/css/app.css`
-- Prefer composable styles like `.flex`, `.grid`, `.items-center`, `.p-4`, `.bg-accent`, and `.text-gray-700`
-- Keep component styling simple and consistent with the existing Blazor layout
+## References
 
-## Useful References
-
-- Root README: `README.md`
-- Workshop guide: `workshop/GUIDE.md`
-- Project checkpoints overview: `.solutions/README.md`
-- CSS utility guidance: `.github/instructions/css-utilities.instructions.md`
-- Frontend design guidance: `.github/instructions/frontend-design.instructions.md`
+- `README.md`
+- `workshop/GUIDE.md`
+- `.solutions/README.md`
+- `.github/instructions/css-utilities.instructions.md`
+- `.github/instructions/frontend-design.instructions.md`
